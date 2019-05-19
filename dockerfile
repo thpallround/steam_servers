@@ -6,7 +6,7 @@ RUN apt-get install -y lib32gcc1 libfontconfig1 libpangocairo-1.0-0 libnss3 libg
 ENV USER_NAME steam
 ENV RUN_SCRIPT mordhau_steamscript.txt
 
-RUN useradd -m steam &&\
+RUN useradd -m USER_NAME &&\
     su - USER_NAME &&\
     mkdir -p /home/USER_NAME/steamcmd &&\
     cd /home/USER_NAME/steamcmd &&\
