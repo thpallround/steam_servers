@@ -2,7 +2,7 @@
 A simple dockerfile which creates an image for running a SteamCMD server.
 
 ## State of development
-***Beware**, this dockerfile is a verry blody-edged version!*
+**Beware**, this dockerfile is a verry blody-edged version!
 
 ## How to use
 comming soon
