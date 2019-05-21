@@ -14,6 +14,7 @@ RUN apt-get install -y apt-utils lib32gcc1 libfontconfig1 libpangocairo-1.0-0 li
 RUN useradd -m "${USER_NAME}" &&\
     su - "${USER_NAME}" &&\
     mkdir -p "/home/${USER_NAME}/steamcmd" &&\
+    chown -R "/home/${USER_NAME}/steamcmd" \
     cd "/home/${USER_NAME}/steamcmd" &&\
     curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
 
