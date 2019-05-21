@@ -21,4 +21,5 @@ USER ${USER_NAME}
 
 WORKDIR /home/${USER_NAME}/steamcmd
 
-ENTRYPOINT ["./steamcmd.sh +login "${STEAM_NAME}" +runscript "${RUN_SCRIPT}""]
+ENTRYPOINT ["./steamcmd.sh"]  
+# +login "${STEAM_NAME}" +runscript "${RUN_SCRIPT}""]
