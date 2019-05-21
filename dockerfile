@@ -1,5 +1,7 @@
 FROM ubuntu
 
+#master
+
 ENV DEBIAN_FRONTEND="noninteractive" \
     USER_NAME="steam" \
     RUN_SCRIPT="mordhau_steamscript.txt" \
