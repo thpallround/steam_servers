@@ -1,11 +1,9 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
-#test
-
-ENV DEBIAN_FRONTEND="noninteractive" \
-    USER_NAME="steam" \
-    RUN_SCRIPT="mordhau_steamscript.txt" \
-    STEAM_NAME="anonymous"
+ENV DEBIAN_FRONTEND=noninteractive
+ENV USER_NAME=steam
+ENV RUN_SCRIPT=mordhau_steamscript.txt
+ENV STEAM_NAME=anonymous
 
 RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get install -y apt-utils lib32gcc1 libfontconfig1 libpangocairo-1.0-0 libnss3 libgconf2-4 \
@@ -21,6 +19,6 @@ RUN useradd -m "${USER_NAME}" &&\
 USER ${USER_NAME}
 
 WORKDIR /home/${USER_NAME}/steamcmd
-
+COPY ${RUN_SCRIPT} .
 ENTRYPOINT ["./steamcmd.sh"]  
 # +login "${STEAM_NAME}" +runscript "${RUN_SCRIPT}""]
